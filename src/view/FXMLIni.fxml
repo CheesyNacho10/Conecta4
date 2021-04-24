@@ -21,7 +21,7 @@
             </Text>
             <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="50.0">
                <children>
-                  <Button fx:id="BSignIn" mnemonicParsing="false" text="Iniciar sesión" textAlignment="CENTER">
+                  <Button fx:id="BSignIn" mnemonicParsing="false" onAction="#navigateToSignIn" text="Iniciar sesión" textAlignment="CENTER">
                      <font>
                         <Font name="Comic Sans MS" size="24.0" />
                      </font>
