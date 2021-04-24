@@ -19,7 +19,7 @@ public class Conecta4 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLHome.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLIni.fxml"));
         
         Scene scene = new Scene(root);
         

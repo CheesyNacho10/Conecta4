@@ -7,21 +7,14 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author Nacho
  */
-public class FXMLHomeController implements Initializable {
-
-    @FXML
-    private Button BSignIn;
-    @FXML
-    private Button BSignUp;
+public class FXMLResetPassController implements Initializable {
 
     /**
      * Initializes the controller class.
