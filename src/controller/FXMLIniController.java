@@ -5,6 +5,7 @@
  */
 package controller;
 
+import DBAccess.Connect4DAOException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import model.Connect4;
+import util.Navigation;
 
 /**
  * FXML Controller class
@@ -29,17 +32,9 @@ public class FXMLIniController implements Initializable {
     @FXML
     private Button BSignUp;
 
-    private void handleButtonAction (ActionEvent e) throws IOException {
-        
-        // To be revised
-        if (e.getSource() == BSignIn) {
-            Stage stage = (Stage) BSignIn.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLSignIn.fxml"));
-            
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
+    @FXML
+    private void navigateToSignIn (ActionEvent e) {
+        Navigation.navigateToSignIn((Stage) BSignIn.getScene().getWindow(), getClass());
     }
     
     /**
@@ -47,6 +42,16 @@ public class FXMLIniController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        // creates demo data if it doesn't already exist
+        try {
+            Connect4 db = Connect4.getSingletonConnect4();
+            if(!db.exitsNickName("nickName1")) {
+                db.createDemoData(10, 10, 10);
+            }
+            
+        } catch (Connect4DAOException err) {
+            System.out.println(err);
+        }
+        
     }
 }
