@@ -25,7 +25,7 @@ import util.Navigation;
  *
  * @author Nacho
  */
-public class FXMLIniController implements Initializable {
+public class FXMLIniController extends FXMLBaseController {
 
     @FXML
     private Button BSignIn;
@@ -41,10 +41,8 @@ public class FXMLIniController implements Initializable {
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // creates demo data if it doesn't already exist
+    public void init() {
         try {
-            Connect4 db = Connect4.getSingletonConnect4();
             if(!db.exitsNickName("nickName1")) {
                 db.createDemoData(10, 10, 10);
             }

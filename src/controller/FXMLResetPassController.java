@@ -6,7 +6,7 @@
 package controller;
 
 import DBAccess.Connect4DAOException;
-import application.ApplicationState;
+import model.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -22,24 +22,10 @@ import util.Navigation;
  *
  * @author Nacho
  */
-public class FXMLResetPassController implements Initializable {
-
+public class FXMLResetPassController extends FXMLBaseController {
     
     @FXML
     private Text TPass;
-    
-    private Connect4 db;
-    private ApplicationState applicationState;
-    
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        initDB();
-        initAppState();
-        setText();
-    }    
     
     @FXML
     private void navigateToIni() {
@@ -50,17 +36,10 @@ public class FXMLResetPassController implements Initializable {
         Player p = db.getPlayer(applicationState.getForgotPassNickName());
         TPass.setText(p.getPassword());
     }
-    
-    private void initDB() {
-        try {
-            db = Connect4.getSingletonConnect4();
-        } catch (Connect4DAOException err) {
-            System.out.println(err);
-        }
-    }
-    
-    private void initAppState() {
-        applicationState = ApplicationState.getInstance();
+
+    @Override
+    void init() {
+        setText();
     }
     
 }

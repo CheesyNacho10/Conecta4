@@ -6,7 +6,7 @@
 package controller;
 
 import DBAccess.Connect4DAOException;
-import application.ApplicationState;
+import model.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -25,7 +25,7 @@ import util.Navigation;
  *
  * @author Nacho
  */
-public class FXMLForgetPassController implements Initializable {
+public class FXMLForgetPassController extends FXMLBaseController {
 
     @FXML
     private Button BSendPass;
@@ -36,15 +36,11 @@ public class FXMLForgetPassController implements Initializable {
     @FXML
     private TextField TFUsername;
     
-    private Connect4 db;
-    private ApplicationState applicationState;
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        initDB();
-        initAppState();
+    public void init() {
     }    
     
     @FXML
@@ -57,18 +53,6 @@ public class FXMLForgetPassController implements Initializable {
         } else {
             TError.setVisible(true);
         }
-    }
-    
-    private void initDB() {
-        try {
-            db = Connect4.getSingletonConnect4();
-        } catch (Connect4DAOException err) {
-            System.out.println(err);
-        }
-    }
-    
-    private void initAppState() {
-        applicationState = ApplicationState.getInstance();
     }
     
     private void showInfoDialog() {

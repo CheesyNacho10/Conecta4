@@ -5,7 +5,7 @@
  */
 package controller;
 
-import application.ApplicationState;
+import model.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -22,7 +22,7 @@ import util.Navigation;
  *
  * @author 44puk
  */
-public class FXMLHomeController implements Initializable{
+public class FXMLHomeController extends FXMLBaseController {
     
     @FXML
     private ImageView IVFirstPlayerAvatar;
@@ -39,16 +39,11 @@ public class FXMLHomeController implements Initializable{
     @FXML
     private Button BSecondPlayerButton;
     
-    
-    
-    private ApplicationState applicationState;
-    
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        initAppState();
+    public void init() {
         initFirstPlayer();
         initSecondPlayer();
     } 
@@ -97,8 +92,4 @@ public class FXMLHomeController implements Initializable{
         IVFirstPlayerAvatar.setImage(firstPlayer.getAvatar());
         TFirstPlayerName.setText(firstPlayer.getNickName());
     }    
-    private void initAppState() {
-        applicationState = ApplicationState.getInstance();
-    }
-    
 }

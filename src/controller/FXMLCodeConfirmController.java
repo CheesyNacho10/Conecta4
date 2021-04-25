@@ -18,7 +18,7 @@ import util.Navigation;
  *
  * @author 44puk
  */
-public class FXMLCodeConfirmController implements Initializable {
+public class FXMLCodeConfirmController extends FXMLBaseController {
     
     @FXML
     private TextField TFCode;
@@ -27,7 +27,7 @@ public class FXMLCodeConfirmController implements Initializable {
     private Text TError;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void init() {
     }
     
     @FXML
