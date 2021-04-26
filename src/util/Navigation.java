@@ -40,6 +40,10 @@ public class Navigation {
         navigate(stage, classType, "/view/FXMLCodeConfirm.fxml");
     }
     
+    public static void navigateToGame(Stage stage, Class classType){
+        navigate(stage, classType, "/view/FXMLGame.fxml");
+    }
+    
     
     private static void navigate(Stage stage, Class classType, String res) {
         try {

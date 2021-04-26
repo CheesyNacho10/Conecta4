@@ -70,6 +70,11 @@ public class FXMLHomeController extends FXMLBaseController {
             Navigation.navigateToSignIn((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
         }
     }
+    
+    @FXML
+    private void navigateToGame() {
+        Navigation.navigateToGame((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
+    }
    
     private void initSecondPlayer() {
         

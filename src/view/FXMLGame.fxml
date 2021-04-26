@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="700.0" minWidth="600.0" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLGameController">
+   <center>
+      <GridPane fx:id="GPField" gridLinesVisible="true" minHeight="600.0" minWidth="600.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Circle fx:id="CircleZero" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleOne" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleTwo" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleThree" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleFour" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleFive" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="5" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleSix" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="6" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+            <Circle fx:id="CircleSeven" fill="DODGERBLUE" radius="35.0" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="7" GridPane.hgrow="ALWAYS" GridPane.vgrow="SOMETIMES" />
+         </children>
+      </GridPane>
+   </center>
+   <top>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="IVFirstPlayerAvatar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+                  <Text fx:id="TFirstPlayerName" fill="DODGERBLUE" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text fx:id="TSecondPlayerName" fill="RED" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Máquina">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fx:id="IVSecondPlayerAvatar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="20.0" />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</BorderPane>
