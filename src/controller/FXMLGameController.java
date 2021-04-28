@@ -5,9 +5,13 @@
  */
 package controller;
 
+import game.Game;
+import game.GameState;
 import java.awt.Paint;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -54,15 +58,23 @@ public class FXMLGameController extends FXMLBaseController{
     @FXML
     private Circle CircleSeven;
     
+    private Game game = new Game();
     private boolean firstPlayerTurn = true;
     private Color color = firstPlayerTurn ? Color.DODGERBLUE : Color.RED;
+    
+    private List<Circle> addedCircles = new ArrayList();
     
     
 
     @Override
     void init() {
         initFirstPlayer();
+        initSecondPlayer();
         initCircleListeners();
+        //TODO 
+        // 1. DRAW state
+        // 2. dialogs
+        // 3. maquina
     }
     
     private void initCircleListeners() {
@@ -83,10 +95,46 @@ public class FXMLGameController extends FXMLBaseController{
                     index = 0;
                 }
                 System.out.println("circle clicked in column " + index);
-                addCircle(index, 7);
+                if(game.columnHasSpace(index)){
+                    int row = game.addCircle(index, firstPlayerTurn) + 1;
+                    addCircle(index, row);
+                    
+                    checkGameState(game.getState(), circles);
+                    
+                } else {
+                    System.out.println("column no space" + index);
+                }
+                
+            });
+        }
+    }
+    
+    private void checkGameState(GameState gameState, Circle[] circles) {
+        System.out.println("state: " + gameState.name());
+        switch(gameState){
+            case PLAYING:
                 switchTurns();
                 setCircleColors(circles);
-            });
+                return;
+            case PLAYER_ONE_VICTORY:
+                //dialog
+                break;
+            case PLAYER_TWO_VICTORY:
+                //dialog
+                break;
+            case DRAW:
+                //dialog
+                break;    
+        
+        }
+        // show dialog
+        restartGame();
+    }
+    
+    private void restartGame() {
+        game = new Game();
+        for(Circle c : addedCircles) {
+            c.setVisible(false);
         }
     }
     
@@ -106,6 +154,7 @@ public class FXMLGameController extends FXMLBaseController{
         c.setRadius(35.);
         c.setFill(color);
         GPField.add(c, column, row);
+        addedCircles.add(c);
     }
     
     private void initFirstPlayer() {
