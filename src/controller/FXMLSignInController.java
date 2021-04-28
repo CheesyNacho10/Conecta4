@@ -6,7 +6,7 @@
 package controller;
 
 import DBAccess.Connect4DAOException;
-import model.ApplicationState;
+import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -19,11 +19,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Connect4;
 import model.Player;
-import util.Navigation;
+import nav.Navigation;
 
 /**
  * FXML Controller class
- *
+ * Sing in scene where we verify the identity of the user
  * @author Nacho
  */
 public class FXMLSignInController extends FXMLBaseController {
@@ -51,10 +51,14 @@ public class FXMLSignInController extends FXMLBaseController {
         Navigation.navigateToForgotPass((Stage) BSignIn.getScene().getWindow(), getClass());
     }
     
+    /**
+     * When the user hits de button we verify their identity.
+     * If it's authorised we move to the home screen
+     */
     @FXML
     private void authorizeUser(){
-        Player p = getUser(TFUser.getText(), PFPass.getText());
-        if(p != null && applicationState.logInPlayer(p)) {
+        Player p = getUser(TFUser.getText(), PFPass.getText()); 
+        if(p != null && applicationState.logInPlayer(p)) { // Singleton ApplicationState to know if the Player is in the Database
             navigateHome();
         } else {
             TError.setVisible(true);
@@ -66,6 +70,12 @@ public class FXMLSignInController extends FXMLBaseController {
         Navigation.navigateToHome((Stage) BSignIn.getScene().getWindow(), getClass());
     }
     
+    /**
+     * Gets the user in form of Player
+     * @param nickName Name
+     * @param password Password
+     * @return Player created
+     */
     private Player getUser(String nickName, String password) {
         Player p = db.loginPlayer(nickName, password);
         return p;

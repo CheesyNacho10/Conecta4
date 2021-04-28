@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28 abr. 2021, 13:56:22
+    Author     : Nacho
+*/
+
+#AnchorPane {
+    -fx-background-color: #85c3f2;
+    
+}
+
+.text {
+    -fx-font-family: "dubai bold";
+    -fx-text-inner-color: red;
+}
+
+#title {
+    -fx-font-size: 48px;
+}
+
+.button {
+    -fx-background-color: #D9DFCD;
+    -fx-font-size: 32px;
+}
+.textfield {
+    -fx-font-family: "Dubai Bold";
+}

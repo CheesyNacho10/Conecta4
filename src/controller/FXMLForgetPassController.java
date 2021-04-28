@@ -6,7 +6,7 @@
 package controller;
 
 import DBAccess.Connect4DAOException;
-import model.ApplicationState;
+import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -18,7 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Connect4;
-import util.Navigation;
+import nav.Navigation;
 
 /**
  * FXML Controller class

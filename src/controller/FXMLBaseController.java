@@ -6,7 +6,7 @@
 package controller;
 
 import DBAccess.Connect4DAOException;
-import model.ApplicationState;
+import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;

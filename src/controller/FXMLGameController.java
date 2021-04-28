@@ -5,19 +5,27 @@
  */
 package controller;
 
-import game.Game;
-import game.GameState;
+import model.Game;
+import model.GameState;
 import java.awt.Paint;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.Player;
 
 /**
@@ -71,10 +79,7 @@ public class FXMLGameController extends FXMLBaseController{
         initFirstPlayer();
         initSecondPlayer();
         initCircleListeners();
-        //TODO 
-        // 1. DRAW state
         // 2. dialogs
-        // 3. maquina
     }
     
     private void initCircleListeners() {
@@ -99,7 +104,16 @@ public class FXMLGameController extends FXMLBaseController{
                     int row = game.addCircle(index, firstPlayerTurn) + 1;
                     addCircle(index, row);
                     
-                    checkGameState(game.getState(), circles);
+                    if (checkGameState(game.getState(), circles) && applicationState.getSecondPlayer() == null) {
+                        index = (int) (Math.random() * 6);
+                        while(!game.columnHasSpace(index)) {
+                            index = (int) (Math.random() * 6);
+                        }
+                        row = game.addCircle(index, firstPlayerTurn) + 1;
+                        System.out.println("circle clicked in column " + index);
+                        addCircle(index, row);
+                        checkGameState(game.getState(), circles);
+                    }
                     
                 } else {
                     System.out.println("column no space" + index);
@@ -109,38 +123,59 @@ public class FXMLGameController extends FXMLBaseController{
         }
     }
     
-    private void checkGameState(GameState gameState, Circle[] circles) {
+    private boolean checkGameState(GameState gameState, Circle[] circles) {
         System.out.println("state: " + gameState.name());
+        String res = "";
         switch(gameState){
             case PLAYING:
-                switchTurns();
+                switchTurns(circles);
                 setCircleColors(circles);
-                return;
+                return true;
             case PLAYER_ONE_VICTORY:
-                //dialog
+                res = "¡" + applicationState.getFirstPlayer() + " ha ganado!";
                 break;
             case PLAYER_TWO_VICTORY:
-                //dialog
+                res = "¡" + applicationState.getSecondPlayer() + " ha ganado!";
                 break;
             case DRAW:
-                //dialog
+                res = "¡Empate!";
                 break;    
         
         }
-        // show dialog
-        restartGame();
+        
+        //endgame(s);
+        restartGame(circles);
+        return false;
     }
     
-    private void restartGame() {
+//    private void endGame(String s) {
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FXMLFinalState.fxml"));
+//        Parent root = null;
+//        try {
+//            root = (Parent) fxmlLoader.load();
+//        } catch (IOException ex) {
+//            Logger.getLogger(FXMLGameController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        Scene scene = new Scene(root);
+//        //FXMLFinalStateController. ;
+//        Stage stage = new Stage();
+//        stage.initModality(Modality.APPLICATION_MODAL);
+//        stage.setScene(new Scene(root));  
+//        stage.show();
+//    }
+    
+    private void restartGame(Circle[] circles) {
         game = new Game();
         for(Circle c : addedCircles) {
             c.setVisible(false);
         }
+        if(!firstPlayerTurn) { switchTurns(circles); }
     }
     
-    private void switchTurns() {
+    private void switchTurns(Circle[] circles) {
         firstPlayerTurn = !firstPlayerTurn;
         color = firstPlayerTurn ? Color.DODGERBLUE : Color.RED;
+        setCircleColors(circles);
     }
     
     private void setCircleColors(Circle[] circles){

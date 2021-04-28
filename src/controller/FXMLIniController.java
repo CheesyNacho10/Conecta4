@@ -18,7 +18,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import model.Connect4;
-import util.Navigation;
+import nav.Navigation;
 
 /**
  * FXML Controller class

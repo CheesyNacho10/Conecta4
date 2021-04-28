@@ -15,7 +15,7 @@
          <children>
             <Button mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" text="Jugar">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Dubai Bold" size="18.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" text="Jugar contra máquina">

@@ -5,7 +5,7 @@
  */
 package controller;
 
-import model.ApplicationState;
+import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -16,10 +16,12 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Player;
-import util.Navigation;
+import nav.Navigation;
 
 /**
- *
+ * Home screen controller where the player can choose between
+ * playing against the second player or against the machine.
+ * The second player can also log in or register
  * @author 44puk
  */
 public class FXMLHomeController extends FXMLBaseController {
@@ -40,7 +42,7 @@ public class FXMLHomeController extends FXMLBaseController {
     private Button BSecondPlayerButton;
     
     /**
-     * Initializes the controller class.
+     * Initializes the two players
      */
     @Override
     public void init() {
@@ -51,11 +53,11 @@ public class FXMLHomeController extends FXMLBaseController {
     @FXML
     private void firstPlayerLogOut() {
         if(applicationState.logOutFirstPlayer()) {
-            // another player is still logged in so he is player 1 now
+            // Another player is still logged in so he is player 1 now
             initFirstPlayer();
             initSecondPlayer();
         } else {
-            // no more logged in player, go to log in screen
+            // No more logged in player, so go to log in screen
             Navigation.navigateToSignIn((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
         }
     }

@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game;
+package model;
 
 /**
- *
+ * Enum class for types of GameStates
  * @author 44puk
  */
-public enum Cell {
-        EMPTY,
-        PLAYER_ONE,
-        PLAYER_TWO;
+public enum GameState {
+        PLAYING,
+        PLAYER_ONE_VICTORY,
+        PLAYER_TWO_VICTORY,
+        DRAW
     }
