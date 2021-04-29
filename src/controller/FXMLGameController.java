@@ -13,12 +13,15 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -27,6 +30,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Player;
+import nav.Navigation;
 
 /**
  *
@@ -125,26 +129,31 @@ public class FXMLGameController extends FXMLBaseController{
     
     private boolean checkGameState(GameState gameState, Circle[] circles) {
         System.out.println("state: " + gameState.name());
-        String res = "";
+        String message = "";
         switch(gameState){
             case PLAYING:
                 switchTurns(circles);
                 setCircleColors(circles);
                 return true;
             case PLAYER_ONE_VICTORY:
-                res = "¡" + applicationState.getFirstPlayer() + " ha ganado!";
+                message = "¡" + applicationState.getFirstPlayer().getNickName() + " ha ganado!";
                 break;
             case PLAYER_TWO_VICTORY:
-                res = "¡" + applicationState.getSecondPlayer() + " ha ganado!";
+                message = "¡" + (applicationState.getSecondPlayer() != null ? applicationState.getSecondPlayer().getNickName() : "máquina") + " ha ganado!";
                 break;
             case DRAW:
-                res = "¡Empate!";
+                message = "¡Empate!";
                 break;    
         
         }
+        boolean startNewGame = showDialog(message);
         
-        //endgame(s);
-        restartGame(circles);
+        if(startNewGame) {
+            restartGame(circles);
+        } else {
+            Navigation.navigateToHome((Stage) GPField.getScene().getWindow(), getClass());
+        }
+        
         return false;
     }
     
@@ -210,6 +219,30 @@ public class FXMLGameController extends FXMLBaseController{
             TSecondPlayerName.setText("Máquina");
         }
         
+    }
+
+    private boolean showDialog(String message) {
+        Alert dialog = new Alert(Alert.AlertType.INFORMATION);
+        
+        dialog.setTitle("Fin de partida");
+        dialog.setHeaderText(message);
+        dialog.setContentText("¿Quieres jugar otra partida?");
+        
+        ButtonType goHomeButton = new ButtonType("No, volver a menú");
+        ButtonType newGameButton = new ButtonType("Si, quiero una más");
+        dialog.getButtonTypes().setAll(goHomeButton, newGameButton);
+        
+        Optional<ButtonType> result = dialog.showAndWait();
+        
+        if(result.isPresent()) {
+            if(result.get() == goHomeButton) {
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+          return false;  
+        }
     }
     
     

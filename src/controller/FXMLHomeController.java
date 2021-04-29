@@ -41,6 +41,12 @@ public class FXMLHomeController extends FXMLBaseController {
     @FXML
     private Button BSecondPlayerButton;
     
+    @FXML
+    private Button BPvP;
+    
+    @FXML
+    private Button BPvE;
+    
     /**
      * Initializes the two players
      */
@@ -48,6 +54,7 @@ public class FXMLHomeController extends FXMLBaseController {
     public void init() {
         initFirstPlayer();
         initSecondPlayer();
+        initButtons();
     } 
     
     @FXML
@@ -56,6 +63,7 @@ public class FXMLHomeController extends FXMLBaseController {
             // Another player is still logged in so he is player 1 now
             initFirstPlayer();
             initSecondPlayer();
+            initButtons();
         } else {
             // No more logged in player, so go to log in screen
             Navigation.navigateToSignIn((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
@@ -68,6 +76,7 @@ public class FXMLHomeController extends FXMLBaseController {
         if(secondPlayer != null) {
             applicationState.logOutSecondPlayer();
             initSecondPlayer();
+            initButtons();
         } else {
             Navigation.navigateToSignIn((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
         }
@@ -99,4 +108,14 @@ public class FXMLHomeController extends FXMLBaseController {
         IVFirstPlayerAvatar.setImage(firstPlayer.getAvatar());
         TFirstPlayerName.setText(firstPlayer.getNickName());
     }    
+
+    private void initButtons() {
+        if(applicationState.getSecondPlayer() != null) {
+            BPvE.disableProperty().setValue(true);
+            BPvP.disableProperty().setValue(false);
+        } else {
+            BPvE.disableProperty().setValue(false);
+            BPvP.disableProperty().setValue(true);
+        }
+    }
 }

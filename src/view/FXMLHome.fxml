@@ -13,12 +13,12 @@
    <center>
       <VBox alignment="CENTER" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" text="Jugar">
+            <Button fx:id="BPvP" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" text="Jugar">
                <font>
                   <Font name="Dubai Bold" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" text="Jugar contra máquina">
+            <Button fx:id="BPvE" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" text="Jugar contra máquina">
                <font>
                   <Font size="18.0" />
                </font>
