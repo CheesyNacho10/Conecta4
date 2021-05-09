@@ -89,12 +89,14 @@ public class FXMLGameController extends FXMLBaseController{
     private void initCircleListeners() {
         Circle[] circles = new Circle[] {CircleZero, CircleOne, CircleTwo, CircleThree, CircleFour, CircleFive, CircleSix, CircleSeven};
         for (Circle circle : circles) {
+            circle.setVisible(false);
+            
             circle.setOnMouseEntered(event -> {
-                circle.setRadius(40.);
+                circle.setVisible(false);
             });
             
             circle.setOnMouseExited(event -> {
-                circle.setRadius(35.);
+                circle.setVisible(false);
             });
             
             circle.setOnMouseClicked(event -> {
@@ -157,22 +159,6 @@ public class FXMLGameController extends FXMLBaseController{
         return false;
     }
     
-//    private void endGame(String s) {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FXMLFinalState.fxml"));
-//        Parent root = null;
-//        try {
-//            root = (Parent) fxmlLoader.load();
-//        } catch (IOException ex) {
-//            Logger.getLogger(FXMLGameController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//        Scene scene = new Scene(root);
-//        //FXMLFinalStateController. ;
-//        Stage stage = new Stage();
-//        stage.initModality(Modality.APPLICATION_MODAL);
-//        stage.setScene(new Scene(root));  
-//        stage.show();
-//    }
-    
     private void restartGame(Circle[] circles) {
         game = new Game();
         for(Circle c : addedCircles) {
@@ -228,8 +214,8 @@ public class FXMLGameController extends FXMLBaseController{
         dialog.setHeaderText(message);
         dialog.setContentText("¿Quieres jugar otra partida?");
         
-        ButtonType goHomeButton = new ButtonType("No, volver a menú");
-        ButtonType newGameButton = new ButtonType("Si, quiero una más");
+        ButtonType goHomeButton = new ButtonType("Volver a menú");
+        ButtonType newGameButton = new ButtonType("Jugar de nuevo");
         dialog.getButtonTypes().setAll(goHomeButton, newGameButton);
         
         Optional<ButtonType> result = dialog.showAndWait();

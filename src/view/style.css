@@ -7,25 +7,70 @@ and open the template in the editor.
     Created on : 28 abr. 2021, 13:56:22
     Author     : Nacho
 */
-
-#AnchorPane {
-    -fx-background-color: #85c3f2;
+.root {
+    dBlue: #1062A1;
+    lBlue: #85c3f2;
+    nBlue: #45A4ED;
     
+    eBlack: #1E1E20;
+    eSilver: #77797E;
+    eBeige: #D9DFCD;
+    
+    eGreen: #8EF507;
 }
 
-.text {
+
+BorderPane {
+    -fx-background-color: lBlue;
+}
+
+Text {
     -fx-font-family: "dubai bold";
-    -fx-text-inner-color: red;
+    -fx-fill: eBlack;
+}
+
+Text.menu {
+    -fx-fill: eBeige;
+}
+
+#TError {
+    -fx-fill: red;
+}
+
+TextField {
+    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-background-radius: 0;
+}
+
+TextField:focused {
+    -fx-background-color: lBlue;
+}
+
+.menu {
+    -fx-background-color: dBlue;
+    -fx-background-radius: 12px;
+}
+
+Hyperlink {
+    -fx-text-fill: eBeige;
 }
 
 #title {
     -fx-font-size: 48px;
 }
 
-.button {
-    -fx-background-color: #D9DFCD;
+Button {
+    -fx-background-color: eBeige;
+    -fx-font-family: "dubai bold";
+    -fx-background-radius: 8px;
+    -fx-text-fill: eBlack;
+}
+
+Button.big {
     -fx-font-size: 32px;
 }
-.textfield {
-    -fx-font-family: "Dubai Bold";
+
+.game {
+    -fx-background-color: eBeige;
 }

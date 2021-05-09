@@ -9,6 +9,7 @@ import DBAccess.Connect4DAOException;
 import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -38,6 +39,8 @@ public class FXMLSignInController extends FXMLBaseController {
     private Button BSignIn;
     @FXML
     private Text TError;
+    @FXML
+    private Button BSignUp;
     
 
     /**
@@ -79,5 +82,9 @@ public class FXMLSignInController extends FXMLBaseController {
     private Player getUser(String nickName, String password) {
         Player p = db.loginPlayer(nickName, password);
         return p;
+    }
+
+    @FXML
+    private void navigateToSignUp(ActionEvent event) {
     }
 }

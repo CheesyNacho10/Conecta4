@@ -5,60 +5,67 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSignInController">
-   <children>
-      <VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="800.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+<BorderPane prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLSignInController">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox alignment="CENTER_LEFT" fillWidth="false" maxWidth="400.0" prefHeight="100.0" prefWidth="400.0">
+            <Text id="title" strokeType="OUTSIDE" strokeWidth="0.0" text="CONECTA 4" />
+            <VBox alignment="CENTER" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" styleClass="menu">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario">
+                  <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="100.0" prefWidth="250.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu" text="Usuario">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="TFUser" prefWidth="400.0" promptText="NombreDeEjemplo1" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="100.0" prefWidth="250.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="menu" text="Contraseña">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <PasswordField fx:id="PFPass" prefWidth="400.0" promptText="MyContraseñaDeEjemplo!1" />
+                        <Hyperlink fx:id="HLForgetPass" onAction="#navigateToForgotPass" text="¿Olvidaste tu contraseña?">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Hyperlink>
+                     </children>
+                  </VBox>
+                  <Button fx:id="BSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#authorizeUser" prefWidth="250.0" styleClass="big" text="Iniciar sesión" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="BSignUp" mnemonicParsing="false" onAction="#navigateToSignUp" prefWidth="250.0" styleClass="big" text="Registrarse">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Text id="TError" fx:id="TError" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Has introducido datos incorrectos" visible="false">
                      <font>
                         <Font size="18.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
                   </Text>
-                  <TextField fx:id="TFUser" prefWidth="400.0" />
                </children>
+               <padding>
+                  <Insets top="40.0" />
+               </padding>
             </VBox>
-            <VBox alignment="CENTER_LEFT" fillWidth="false" maxWidth="400.0" prefHeight="100.0" prefWidth="400.0">
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <PasswordField fx:id="PFPass" prefWidth="400.0" />
-                  <Hyperlink fx:id="HLForgetPass" onAction="#navigateToForgotPass" text="¿Olvidaste tu contraseña?">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Hyperlink>
-               </children>
-            </VBox>
-            <Button fx:id="BSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#authorizeUser" prefWidth="400.0" text="Iniciar sesión" textAlignment="CENTER">
-               <font>
-                  <Font name="Comic Sans MS" size="24.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Button>
-            <Text fx:id="TError" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Has introducido datos incorrectos" visible="false">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <VBox.margin>
-                  <Insets top="20.0" />
-               </VBox.margin>
-            </Text>
          </children>
-         <padding>
-            <Insets left="150.0" right="150.0" />
-         </padding>
       </VBox>
-   </children>
-</AnchorPane>
+   </center>
+</BorderPane>
