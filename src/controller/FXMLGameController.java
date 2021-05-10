@@ -89,14 +89,13 @@ public class FXMLGameController extends FXMLBaseController{
     private void initCircleListeners() {
         Circle[] circles = new Circle[] {CircleZero, CircleOne, CircleTwo, CircleThree, CircleFour, CircleFive, CircleSix, CircleSeven};
         for (Circle circle : circles) {
-            circle.setVisible(false);
             
             circle.setOnMouseEntered(event -> {
-                circle.setVisible(false);
+                circle.setRadius(40.);
             });
             
             circle.setOnMouseExited(event -> {
-                circle.setVisible(false);
+                circle.setRadius(35.);
             });
             
             circle.setOnMouseClicked(event -> {
