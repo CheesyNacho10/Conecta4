@@ -86,6 +86,11 @@ public class FXMLHomeController extends FXMLBaseController {
     private void navigateToGame() {
         Navigation.navigateToGame((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
     }
+    
+    @FXML
+    private void navigateToRanking() {
+        Navigation.navigateToRanking((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
+    }
    
     private void initSecondPlayer() {
         

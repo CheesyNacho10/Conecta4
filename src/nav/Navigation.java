@@ -58,4 +58,8 @@ public class Navigation {
     public static void navigateToGame(Stage stage, Class classType){
         navigate(stage, classType, "/view/FXMLGame.fxml");
     }
+    
+    public static void navigateToRanking(Stage stage, Class classType){
+        navigate(stage, classType, "/view/FXMLRanking.fxml");
+    }
 }

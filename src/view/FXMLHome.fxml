@@ -26,6 +26,11 @@
                   <Insets />
                </VBox.margin>
             </Button>
+            <Button fx:id="BRanking" mnemonicParsing="false" onAction="#navigateToRanking" prefWidth="400.0" styleClass="big" text="Ranking">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
    </center>

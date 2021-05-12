@@ -44,7 +44,17 @@ TextField {
 }
 
 TextField:focused {
-    -fx-background-color: lBlue;
+    -fx-background-color: eBeige;
+}
+
+PasswordField {
+    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-background-radius: 0;
+}
+
+PasswordField:focused {
+    -fx-background-color: eBeige;
 }
 
 .menu {
@@ -73,4 +83,18 @@ Button.big {
 
 .game {
     -fx-background-color: eBeige;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
+}
+
+.list-cell:even {
+    -fx-background-color: eBeige;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #0093ff;
+    -fx-text-fill: white;
 }
