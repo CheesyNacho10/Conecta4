@@ -20,7 +20,7 @@ and open the template in the editor.
 }
 
 
-BorderPane {
+BorderPane, AnchorPane {
     -fx-background-color: lBlue;
 }
 

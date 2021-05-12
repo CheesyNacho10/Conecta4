@@ -62,4 +62,12 @@ public class Navigation {
     public static void navigateToRanking(Stage stage, Class classType){
         navigate(stage, classType, "/view/FXMLRanking.fxml");
     }
+    
+    public static void navigateToHistory(Stage stage, Class classType){
+        navigate(stage, classType, "/view/FXMLHistory.fxml");
+    }
+    
+    public static void navigateToTotalHistory(Stage stage, Class classType){
+        navigate(stage, classType, "/view/FXMLTotalHistory.fxml");
+    }
 }

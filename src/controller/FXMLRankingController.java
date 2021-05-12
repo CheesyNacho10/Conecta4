@@ -89,7 +89,6 @@ public class FXMLRankingController extends FXMLBaseController {
             
         }
         
-        
     }
     
 }

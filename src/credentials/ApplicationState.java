@@ -5,6 +5,7 @@
  */
 package credentials;
 
+import java.time.LocalDate;
 import model.Player;
 
 /**
@@ -30,6 +31,10 @@ public class ApplicationState {
     private Player secondPlayer;
     
     private String forgotPassNickName;
+    
+    private LocalDate startDate;
+    private LocalDate endDate;
+         
     
     /**
      * Makes (if necessary) a new instance
@@ -107,4 +112,22 @@ public class ApplicationState {
     public void logOutSecondPlayer() {
         secondPlayer = null;
     }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+    
+    
 }
