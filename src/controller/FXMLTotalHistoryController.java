@@ -8,6 +8,7 @@ package controller;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.NavigableMap;
 import java.util.TreeMap;
@@ -21,6 +22,7 @@ import javafx.stage.Stage;
 import model.Player;
 import model.Round;
 import nav.Navigation;
+import util.RoundListCell;
 
 /**
  *
@@ -55,28 +57,14 @@ public class FXMLTotalHistoryController extends FXMLBaseController {
             allRounds.addAll(day);
         });
         
+        Collections.reverse(allRounds);
+        
         ObservableList<Round> observableList = FXCollections.observableArrayList(allRounds);
+        
         gamesListView.setItems(observableList);
     }
 
     private void initListCellFactory() {
         gamesListView.setCellFactory(c -> new RoundListCell());
     }
-    
-    class RoundListCell extends ListCell<Round> {
-              
-        @Override
-        protected void updateItem(Round item, boolean empty) {
-            super.updateItem(item, empty);
-            
-            if (item == null || empty) {
-                setText(null);
-            } else {
-                setText(item.toString());
-            }
-            
-        }
-        
-    }
-    
 }

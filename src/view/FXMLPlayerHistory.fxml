@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLTotalHistoryController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLPlayerHistoryController">
    <center>
       <ListView fx:id="gamesListView" fixedCellSize="45.0" focusTraversable="false" maxHeight="600.0" maxWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
    </center>
@@ -27,4 +27,20 @@
          </padding>
       </HBox>
    </top>
+   <bottom>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#showAllGames" text="Todas" />
+            <Button mnemonicParsing="false" onAction="#showLostGames" text="Perdidas">
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#showWonGames" text="Ganadas" />
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </HBox>
+   </bottom>
 </BorderPane>

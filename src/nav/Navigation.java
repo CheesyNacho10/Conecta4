@@ -70,4 +70,8 @@ public class Navigation {
     public static void navigateToTotalHistory(Stage stage, Class classType){
         navigate(stage, classType, "/view/FXMLTotalHistory.fxml");
     }
+    
+    public static void navigateToPlayerHistory(Stage stage, Class classType){
+        navigate(stage, classType, "/view/FXMLPlayerHistory.fxml");
+    }
 }

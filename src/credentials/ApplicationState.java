@@ -35,6 +35,7 @@ public class ApplicationState {
     private LocalDate startDate;
     private LocalDate endDate;
          
+    private String playerToShowHistory;
     
     /**
      * Makes (if necessary) a new instance
@@ -128,6 +129,13 @@ public class ApplicationState {
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
-    
+
+    public String getPlayerToShowHistory() {
+        return playerToShowHistory;
+    }
+
+    public void setPlayerToShowHistory(String playerToShowHistory) {
+        this.playerToShowHistory = playerToShowHistory;
+    }
     
 }
