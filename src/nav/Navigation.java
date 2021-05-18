@@ -5,6 +5,7 @@
  */
 package nav;
 
+import controller.FXMLSignInController;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -74,4 +75,7 @@ public class Navigation {
     public static void navigateToPlayerHistory(Stage stage, Class classType){
         navigate(stage, classType, "/view/FXMLPlayerHistory.fxml");
     }
-}
+
+    public static void navigateToSignUp(Stage stage, Class classType) {
+        navigate(stage, classType, "/view/FXMLSignUp.fxml");    }
+    }

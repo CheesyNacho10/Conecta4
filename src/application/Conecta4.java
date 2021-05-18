@@ -22,6 +22,7 @@ public class Conecta4 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLSignIn.fxml"));
         
         Scene scene = new Scene(root);
+        stage.setTitle("Conecta 4");
         stage.setScene(scene);
         stage.show();
     }

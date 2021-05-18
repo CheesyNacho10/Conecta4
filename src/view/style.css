@@ -37,10 +37,15 @@ Text.menu {
     -fx-fill: red;
 }
 
+#TErrorSmall {
+    -fx-fill: red;
+    -fx-font-size: 12px;
+}
+
 TextField {
     -fx-background-color: -fx-text-box-border, -fx-background;
     -fx-background-insets: 0, 0 0 1 0;
-    -fx-background-radius: 0;
+    -fx-background-radius: 4px;
 }
 
 TextField:focused {
@@ -51,9 +56,21 @@ PasswordField {
     -fx-background-color: -fx-text-box-border, -fx-background;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-background-radius: 0;
+    -fx-background-radius: 4px;
 }
 
 PasswordField:focused {
+    -fx-background-color: eBeige;
+}
+
+DatePicker {
+    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-background-radius: 0;
+    -fx-background-radius: 4px;
+}
+
+DatePicker:focused {
     -fx-background-color: eBeige;
 }
 
@@ -81,6 +98,14 @@ Button.big {
     -fx-font-size: 32px;
 }
 
+Button.medium {
+    -fx-font-size: 24px;
+}
+
+Button.small {
+    -fx-font-size: 12px;
+}
+
 Button.relevant {
     -fx-background-color: eGreen;
     -fx-text-fill: eBlack;
@@ -90,8 +115,47 @@ Button.relevant {
     -fx-background-color: eBeige;
 }
 
+.list-view .scroll-bar:vertical .track {
+    -fx-background-color: dBlue;
+    -fx-border-color: dBlue;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
+.list-view .scroll-bar:vertical .increment-button,
+.list-view .scroll-bar:vertical .decrement-button{
+    -fx-background-color: dBlue;
+    -fx-border-color: dBlue;
+    -fx-background-radius : 0;
+    -fx-padding: 0 10 0 0;
+}
+
+.list-view .scroll-bar:vertical .increment-arrow,
+.list-view .scroll-bar:vertical .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding :0.0 0.15em;
+}
+
+.list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: lBlue;
+    -fx-background-radius: 8px;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+}
+
+.list-view .scroll-bar:vertical .thumb:hover {
+    -fx-background-color: eGreen;
+    -fx-background-radius: 8px;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+}
+
+.list-view .scroll-bar:vertical .thumb:pressed {
+    -fx-background-color: eGreen;
+    -fx-background-radius: 8px;
+    -fx-background-insets : 2.0, 0.0, 0.0;
+}
+
 .list-cell {
-    -fx-background-radius: 12px 12px 0px 0px;
+    -fx-background-radius: 4px;
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
@@ -106,8 +170,4 @@ Button.relevant {
 .list-cell:filled:hover {
     -fx-background-color: #0093ff;
     -fx-text-fill: white;
-}
-
-.list-view {
-    -fx-background-radius: 12px 12px 0px 0px;
 }

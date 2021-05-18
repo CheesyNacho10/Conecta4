@@ -11,6 +11,7 @@ import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.Player;
@@ -28,15 +29,21 @@ public class FXMLPlayerHistoryController extends FXMLBaseController {
     private ListView gamesListView;
     
     private Player player;
+    @FXML
+    private Button showAllGamesB;
+    @FXML
+    private Button showLostGamesB;
+    @FXML
+    private Button showWonGamesB;
 
     @Override
     void init() {
         
         initPlayer();
-        
         initListCellFactory();
-        
         showAllGames();
+        
+        showAllGamesB.setStyle(".relevant");
     }
     
     @FXML

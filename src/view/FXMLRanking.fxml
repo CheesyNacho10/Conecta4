@@ -39,7 +39,7 @@
    <center>
       <VBox maxWidth="-Infinity" prefHeight="450.0" prefWidth="550.0" styleClass="menu" BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="playersListView" fixedCellSize="45.0" focusTraversable="false" maxWidth="-Infinity" prefHeight="528.0" prefWidth="559.0" VBox.vgrow="ALWAYS">
+            <ListView fx:id="playersListView" fixedCellSize="45.0" focusTraversable="false" maxWidth="-Infinity" prefHeight="528.0" prefWidth="559.0" styleClass="menu" VBox.vgrow="ALWAYS">
                <VBox.margin>
                   <Insets bottom="30.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>

@@ -5,11 +5,9 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLPlayerHistoryController">
-   <center>
-      <ListView fx:id="gamesListView" fixedCellSize="45.0" focusTraversable="false" maxHeight="600.0" maxWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" BorderPane.alignment="CENTER" />
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLPlayerHistoryController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -27,20 +25,30 @@
          </padding>
       </HBox>
    </top>
-   <bottom>
-      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+   <center>
+      <VBox maxWidth="-Infinity" prefHeight="200.0" prefWidth="550.0" styleClass="menu" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#showAllGames" text="Todas" />
-            <Button mnemonicParsing="false" onAction="#showLostGames" text="Perdidas">
-               <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#showWonGames" text="Ganadas" />
+            <ListView fx:id="gamesListView" fixedCellSize="45.0" focusTraversable="false" maxWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" styleClass="menu" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="25.0" right="25.0" top="25.0" />
+               </VBox.margin>
+            </ListView>
          </children>
+      </VBox>
+   </center>
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="20.0" styleClass="menu" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="showAllGamesB" mnemonicParsing="false" onAction="#showAllGames" prefWidth="150.0" styleClass="medium" text="Todas" />
+            <Button fx:id="showLostGamesB" mnemonicParsing="false" onAction="#showLostGames" prefWidth="150.0" styleClass="medium" text="Perdidas" />
+            <Button fx:id="showWonGamesB" mnemonicParsing="false" onAction="#showWonGames" prefWidth="150.0" styleClass="medium" text="Ganadas" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
          <padding>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            <Insets top="30.0" />
          </padding>
-      </HBox>
-   </bottom>
+      </VBox>
+   </right>
 </BorderPane>

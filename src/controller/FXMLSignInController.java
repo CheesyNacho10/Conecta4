@@ -48,7 +48,8 @@ public class FXMLSignInController extends FXMLBaseController {
      */
     @Override
     public void init() {
-        //Remove initial focus from TFUser
+        //TD: Remove initial focus from TFUser
+        BSignIn.setDefaultButton(true);
     }    
     
     @FXML
@@ -88,5 +89,6 @@ public class FXMLSignInController extends FXMLBaseController {
 
     @FXML
     private void navigateToSignUp(ActionEvent event) {
+        Navigation.navigateToSignUp((Stage) BSignIn.getScene().getWindow(), getClass());
     }
 }
