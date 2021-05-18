@@ -6,11 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLRankingController">
-   <center>
-      <ListView fx:id="playersListView" fixedCellSize="45.0" focusTraversable="false" maxHeight="600.0" maxWidth="-Infinity" prefHeight="260.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
-   </center>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLRankingController">
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
    </padding>
@@ -38,4 +36,18 @@
          </padding>
       </HBox>
    </top>
+   <center>
+      <VBox maxWidth="-Infinity" prefHeight="450.0" prefWidth="550.0" styleClass="menu" BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="playersListView" fixedCellSize="45.0" focusTraversable="false" maxWidth="-Infinity" prefHeight="528.0" prefWidth="559.0" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
+            </ListView>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
 </BorderPane>

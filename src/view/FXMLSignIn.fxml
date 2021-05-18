@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
@@ -42,10 +43,14 @@
                         </Hyperlink>
                      </children>
                   </VBox>
-                  <Button fx:id="BSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#authorizeUser" prefWidth="250.0" styleClass="big" text="Iniciar sesión" textAlignment="CENTER">
+                  <Button fx:id="BSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#authorizeUser" prefWidth="250.0" text="Iniciar sesión" textAlignment="CENTER">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
+                     <styleClass>
+                        <String fx:value="big" />
+                        <String fx:value="relevant" />
+                     </styleClass>
                   </Button>
                   <Button fx:id="BSignUp" mnemonicParsing="false" onAction="#navigateToSignUp" prefWidth="250.0" styleClass="big" text="Registrarse">
                      <VBox.margin>

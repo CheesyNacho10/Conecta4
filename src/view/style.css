@@ -81,8 +81,17 @@ Button.big {
     -fx-font-size: 32px;
 }
 
+Button.relevant {
+    -fx-background-color: eGreen;
+    -fx-text-fill: eBlack;
+}
+
 .game {
     -fx-background-color: eBeige;
+}
+
+.list-cell {
+    -fx-background-radius: 12px 12px 0px 0px;
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
@@ -97,4 +106,8 @@ Button.big {
 .list-cell:filled:hover {
     -fx-background-color: #0093ff;
     -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-background-radius: 12px 12px 0px 0px;
 }

@@ -84,7 +84,7 @@ public class FXMLRankingController extends FXMLBaseController {
                 avatar.setFitHeight(45.);
                 avatar.setFitWidth(40.);
                 setGraphic(avatar);
-                setText("    Nombre de usuario: " + item.getNickName() + "     Puntuación: " + item.getPoints());
+                setText("\tNombre de usuario: " + item.getNickName() + "\tPuntuación: " + item.getPoints());
             }
             
         }

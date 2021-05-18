@@ -3,16 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLRankingController.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/credentials/ApplicationState.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/nav/Navigation.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLHomeController.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLHistoryController.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/view/FXMLPlayerHistory.fxml</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/util/RoundListCell.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLPlayerHistoryController.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLTotalHistoryController.java</file>
-            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/view/style.css</file>
+            <file>file:/C:/Users/nacho/Desktop/Conecta4/src/controller/FXMLRankingController.java</file>
+            <file>file:/C:/Users/nacho/Desktop/Conecta4/src/view/style.css</file>
+            <file>file:/C:/Users/nacho/Desktop/Conecta4/src/controller/FXMLSignInController.java</file>
         </group>
     </open-files>
 </project-private>

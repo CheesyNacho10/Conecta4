@@ -47,7 +47,9 @@ public class FXMLSignInController extends FXMLBaseController {
      * Initializes the controller class.
      */
     @Override
-    public void init() {}    
+    public void init() {
+        //Remove initial focus from TFUser
+    }    
     
     @FXML
     private void navigateToForgotPass(){
