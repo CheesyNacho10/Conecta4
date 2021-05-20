@@ -59,6 +59,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Text>
+                        <Button mnemonicParsing="false" text="Editar perfil" />
                         <Button mnemonicParsing="false" onAction="#firstPlayerLogOut" text="Salir">
                            <font>
                               <Font size="14.0" />

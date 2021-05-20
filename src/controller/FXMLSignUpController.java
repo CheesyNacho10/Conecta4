@@ -158,4 +158,9 @@ public class FXMLSignUpController extends FXMLBaseController {
         img = IVAvatar.getImage();
         birth = DPBirthDate.getValue();
     }
+
+    @FXML
+    private void navigateToHome(ActionEvent event) {
+        Navigation.navigateToSignIn((Stage) BSignUp.getScene().getWindow(), getClass());
+    }
 }
