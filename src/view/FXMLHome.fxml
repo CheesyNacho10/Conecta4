@@ -11,14 +11,14 @@
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLHomeController">
    <center>
-      <VBox alignment="CENTER" maxHeight="500.0" maxWidth="500.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" styleClass="menu" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" maxHeight="350.0" maxWidth="500.0" prefHeight="150.0" prefWidth="100.0" spacing="20.0" styleClass="menu" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="BPvP" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" styleClass="big" text="Jugar contra jugador">
+            <Button fx:id="BPvP" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" styleClass="big" text="Jugador contra jugador">
                <font>
                   <Font name="Dubai Bold" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="BPvE" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" styleClass="big" text="Jugar contra máquina">
+            <Button fx:id="BPvE" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" styleClass="big" text="Jugador contra máquina">
                <font>
                   <Font size="18.0" />
                </font>
@@ -26,25 +26,29 @@
                   <Insets />
                </VBox.margin>
             </Button>
-            <Button fx:id="BRanking" mnemonicParsing="false" onAction="#navigateToRanking" prefWidth="400.0" styleClass="big" text="Ranking">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#navigateToHistory" prefWidth="400.0" styleClass="big" text="Historial">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#navigateToRanking" prefWidth="175.0" styleClass="medium" text="Ranking">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#navigateToHistory" prefWidth="175.0" styleClass="medium" text="Historial">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </center>
    <top>
       <HBox alignment="CENTER">
          <children>
-            <HBox fx:id="HBFirstPlayerBox" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                <children>
-                  <ImageView fx:id="IVFirstPlayerAvatar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="IVFirstPlayerAvatar" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
@@ -59,20 +63,23 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Text>
-                        <Button mnemonicParsing="false" text="Editar perfil" />
-                        <Button mnemonicParsing="false" onAction="#firstPlayerLogOut" text="Salir">
+                        <Button mnemonicParsing="false" onAction="#firstPlayerEdit" prefWidth="100.0" styleClass="small" text="Editar perfil">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin></Button>
+                        <Button mnemonicParsing="false" onAction="#firstPlayerLogOut" prefWidth="100.0" styleClass="small" text="Salir">
                            <font>
                               <Font size="14.0" />
                            </font>
                            <VBox.margin>
-                              <Insets top="20.0" />
+                              <Insets top="10.0" />
                            </VBox.margin>
                         </Button>
                      </children>
                   </VBox>
                </children>
             </HBox>
-            <HBox fx:id="HBSecondPlayerBox" alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                <children>
                   <VBox alignment="CENTER">
                      <children>
@@ -84,17 +91,22 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Text>
-                        <Button fx:id="BSecondPlayerButton" mnemonicParsing="false" onAction="#secondPlayerAction" text="Iniciar sesión">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
+                        <Button fx:id="BSecondPlayerEdit" mnemonicParsing="false" onAction="#secondPlayerEdit" prefWidth="100.0" styleClass="small" text="Editar perfil">
                            <VBox.margin>
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Button>
+                        <Button fx:id="BSecondPlayerAction" mnemonicParsing="false" onAction="#secondPlayerAction" prefWidth="100.0" styleClass="small" text="Iniciar sesión">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
                      </children>
                   </VBox>
-                  <ImageView fx:id="IVSecondPlayerAvatar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="IVSecondPlayerAvatar" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>

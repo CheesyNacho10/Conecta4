@@ -8,6 +8,7 @@ package controller;
 import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -39,13 +40,15 @@ public class FXMLHomeController extends FXMLBaseController {
     private Text TSecondPlayerName;
     
     @FXML
-    private Button BSecondPlayerButton;
+    private Button BSecondPlayerAction;
     
     @FXML
     private Button BPvP;
     
     @FXML
     private Button BPvE;
+    @FXML
+    private Button BSecondPlayerEdit;
     
     /**
      * Initializes the two players
@@ -98,17 +101,18 @@ public class FXMLHomeController extends FXMLBaseController {
     }
    
     private void initSecondPlayer() {
-        
         Player secondPlayer = applicationState.getSecondPlayer();
         if(secondPlayer != null) {
             IVSecondPlayerAvatar.setVisible(true);
             IVSecondPlayerAvatar.setImage(secondPlayer.getAvatar());
             TSecondPlayerName.setText(secondPlayer.getNickName());
-            BSecondPlayerButton.setText("Salir");
+            BSecondPlayerAction.setText("Salir");
+            BSecondPlayerEdit.setText("Editar perfil");
         } else {
             IVSecondPlayerAvatar.setVisible(false);
             TSecondPlayerName.setText("Jugador 2");
-            BSecondPlayerButton.setText("Iniciar sesión");
+            BSecondPlayerAction.setText("Iniciar sesión");
+            BSecondPlayerEdit.setText("Registrarse");
         }
         
     }
@@ -127,5 +131,15 @@ public class FXMLHomeController extends FXMLBaseController {
             BPvE.disableProperty().setValue(false);
             BPvP.disableProperty().setValue(true);
         }
+    }
+
+    @FXML
+    private void firstPlayerEdit(ActionEvent event) {
+        Navigation.navigateToSignUp((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass(), applicationState.getFirstPlayer());
+    }
+
+    @FXML
+    private void secondPlayerEdit(ActionEvent event) {
+        Navigation.navigateToSignUp((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass(), applicationState.getSecondPlayer());
     }
 }

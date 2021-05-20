@@ -5,12 +5,15 @@
  */
 package nav;
 
+import controller.FXMLHomeController;
 import controller.FXMLSignInController;
+import controller.FXMLSignUpController;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.Player;
 
 /**
  * Navigation class made for simplify switching between FXMLs
@@ -23,7 +26,7 @@ public class Navigation {
     private static void navigate(Stage stage, Class classType, String res) {
         try {
             Parent root = FXMLLoader.load(classType.getResource(res));
-          
+        
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
@@ -77,5 +80,23 @@ public class Navigation {
     }
 
     public static void navigateToSignUp(Stage stage, Class classType) {
-        navigate(stage, classType, "/view/FXMLSignUp.fxml");    }
+        navigate(stage, classType, "/view/FXMLSignUp.fxml");    
     }
+
+    public static void navigateToSignUp(Stage stage, Class classType, Player player) {
+        try {
+            FXMLLoader loader = new FXMLLoader(classType.getResource("/view/FXMLSignUp.fxml"));
+            Parent root = loader.load();
+            
+            FXMLSignUpController controller = loader.getController();
+            controller.setPlayer(player);
+            controller.initEdit();
+            
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch(IOException err) {
+            System.out.println(err);
+        }
+    }
+}
