@@ -25,6 +25,7 @@ public class Navigation {
     */
     private static void navigate(Stage stage, Class classType, String res) {
         try {
+            // Reoslución no variable
             Parent root = FXMLLoader.load(classType.getResource(res));
         
             Scene scene = new Scene(root);

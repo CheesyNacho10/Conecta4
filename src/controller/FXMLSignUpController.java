@@ -89,6 +89,7 @@ public class FXMLSignUpController extends FXMLBaseController {
 
     @FXML
     private void navigateToHome(ActionEvent event) {
+        // TBI Back home if there is player logged in
         if (player == null) {
             Navigation.navigateToSignIn((Stage) BSignUp.getScene().getWindow(), getClass());
         }

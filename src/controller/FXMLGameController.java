@@ -76,7 +76,7 @@ public class FXMLGameController extends FXMLBaseController{
     
     private List<Circle> addedCircles = new ArrayList();
     
-    
+    // TBI Animation, row 0 without background
 
     @Override
     void init() {
