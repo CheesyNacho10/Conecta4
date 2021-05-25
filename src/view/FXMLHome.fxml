@@ -11,7 +11,7 @@
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLHomeController">
    <center>
-      <VBox alignment="CENTER" maxHeight="350.0" maxWidth="500.0" prefHeight="150.0" prefWidth="100.0" spacing="20.0" styleClass="menu" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" maxHeight="400.0" maxWidth="500.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" styleClass="menu" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="BPvP" mnemonicParsing="false" onAction="#navigateToGame" prefWidth="400.0" styleClass="big" text="Jugador contra jugador">
                <font>
@@ -40,6 +40,7 @@
                   </Button>
                </children>
             </HBox>
+            <Button mnemonicParsing="false" onAction="#navigateToStatistics" prefWidth="400.0" styleClass="big" text="Estadística" />
          </children>
       </VBox>
    </center>
