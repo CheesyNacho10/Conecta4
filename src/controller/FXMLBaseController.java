@@ -10,6 +10,7 @@ import credentials.ApplicationState;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.stage.Stage;
 import model.Connect4;
 
 /**
@@ -39,7 +40,7 @@ public abstract class FXMLBaseController implements Initializable {
     private void initAppState() {
         applicationState = ApplicationState.getInstance();
     }
-    
+
     abstract void init();
-    
+
 }

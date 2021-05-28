@@ -32,6 +32,8 @@ public class ApplicationState {
     
     private String forgotPassNickName;
     
+    private boolean blackStyle;
+    
     private LocalDate startDate;
     private LocalDate endDate;
          
@@ -138,4 +140,12 @@ public class ApplicationState {
         this.playerToShowHistory = playerToShowHistory;
     }
     
+    
+    public boolean getStyle() {
+        return blackStyle;
+    }
+    
+    public void setStyle(boolean s) {
+        blackStyle = s;
+    }
 }

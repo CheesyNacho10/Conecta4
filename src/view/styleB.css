@@ -4,33 +4,34 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 28 abr. 2021, 13:56:22
+    Created on : 28 may. 2021, 11:08:09
     Author     : Nacho
 */
 .root {
-    dBlue: #1062A1;
-    lBlue: #85c3f2;
-    nBlue: #45A4ED;
+    dPurple: #291B29;
+    lPurple: #6E6C9E;
     
-    eBlack: #1E1E20;
-    eSilver: #77797E;
-    eBeige: #D9DFCD;
+    ddBlue: #121125;
+    eBlue: #1A3663;
+    sBlue: #5280A3;
     
-    eGreen: #8EF507;
+    dBlack: #050205;
+    lSilver: #748374;
+    dBeige: #BEEBBE;
 }
 
 
 BorderPane, AnchorPane {
-    -fx-background-color: lBlue;
+    -fx-background-color: ddBlue;
 }
 
 Text {
     -fx-font-family: "dubai bold";
-    -fx-fill: eBlack;
+    -fx-fill: dBeige;
 }
 
 Text.menu {
-    -fx-fill: eBeige;
+    -fx-fill: dBeige;
 }
 
 #TError {
@@ -43,44 +44,44 @@ Text.menu {
 }
 
 TextField {
-    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-color: sBlue;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-background-radius: 4px;
 }
 
 TextField:focused {
-    -fx-background-color: eBeige;
+    -fx-background-color: dBeige;
 }
 
 PasswordField {
-    -fx-background-color: -fx-text-box-border, -fx-background;
+    -fx-background-color: sBlue;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-background-radius: 0;
     -fx-background-radius: 4px;
 }
 
 PasswordField:focused {
-    -fx-background-color: eBeige;
+    -fx-background-color: dBeige;
 }
 
 DatePicker {
-    -fx-control-inner-background: -fx-text-box-border, -fx-background;
+    -fx-control-inner-background: sBlue;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-background-radius: 0;
     -fx-background-radius: 4px;
 }
 
 DatePicker:focused {
-    -fx-control-inner-background: eBeige;
+    -fx-control-inner-background: dBeige;
 }
 
 .menu {
-    -fx-background-color: dBlue;
+    -fx-background-color: eBlue;
     -fx-background-radius: 12px;
 }
 
 Hyperlink {
-    -fx-text-fill: eBeige;
+    -fx-text-fill: lSilver;
 }
 
 #title {
@@ -88,10 +89,10 @@ Hyperlink {
 }
 
 Button {
-    -fx-background-color: eBeige;
+    -fx-background-color: lPurple;
     -fx-font-family: "dubai bold";
     -fx-background-radius: 8px;
-    -fx-text-fill: eBlack;
+    -fx-text-fill: dBeige;
 }
 
 Button.big {
@@ -107,25 +108,25 @@ Button.small {
 }
 
 Button.relevant {
-    -fx-background-color: eGreen;
+    -fx-background-color: dBeige;
     -fx-text-fill: eBlack;
 }
 
 .game {
-    -fx-background-color: eBeige;
+    -fx-background-color: lPurple;
 }
 
 .list-view .scroll-bar:vertical .track {
-    -fx-background-color: dBlue;
-    -fx-border-color: dBlue;
+    -fx-background-color: eBlue;
+    -fx-border-color: eBlue;
     -fx-background-radius : 0.0em;
     -fx-border-radius :2.0em;
 }
 
 .list-view .scroll-bar:vertical .increment-button,
 .list-view .scroll-bar:vertical .decrement-button{
-    -fx-background-color: dBlue;
-    -fx-border-color: dBlue;
+    -fx-background-color: eBlue;
+    -fx-border-color: eBlue;
     -fx-background-radius : 0;
     -fx-padding: 0 10 0 0;
 }
@@ -137,19 +138,19 @@ Button.relevant {
 }
 
 .list-view .scroll-bar:vertical .thumb {
-    -fx-background-color: lBlue;
+    -fx-background-color: sBlue;
     -fx-background-radius: 8px;
     -fx-background-insets : 2.0, 0.0, 0.0;
 }
 
 .list-view .scroll-bar:vertical .thumb:hover {
-    -fx-background-color: eGreen;
+    -fx-background-color: dBeige;
     -fx-background-radius: 8px;
     -fx-background-insets : 2.0, 0.0, 0.0;
 }
 
 .list-view .scroll-bar:vertical .thumb:pressed {
-    -fx-background-color: eGreen;
+    -fx-background-color: dBeige;
     -fx-background-radius: 8px;
     -fx-background-insets : 2.0, 0.0, 0.0;
 }
@@ -159,15 +160,21 @@ Button.relevant {
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #0093ff;
+    -fx-background-color: dBeige;
+    -fx-text-fill: dBlack;
+}
+
+.list-cell:odd {
+    -fx-background-color: ddBlue;
     -fx-text-fill: white;
 }
 
 .list-cell:even {
-    -fx-background-color: eBeige;
+    -fx-background-color: sBlue;
+    -fx-text-fill: white;
 }
 
 .list-cell:filled:hover {
-    -fx-background-color: #0093ff;
-    -fx-text-fill: white;
+    -fx-background-color: dBeige;
+    -fx-text-fill: dBlack;
 }

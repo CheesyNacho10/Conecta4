@@ -29,6 +29,7 @@ public class Navigation {
             Parent root = FXMLLoader.load(classType.getResource(res));
         
             Scene scene = new Scene(root);
+//            scene.getStylesheets().add(scene.getClass().getResource("styleB.css").toExternalForm()); 
             stage.setScene(scene);
             stage.show();
         } catch(IOException err) {
