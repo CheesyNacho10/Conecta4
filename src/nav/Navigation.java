@@ -84,6 +84,10 @@ public class Navigation {
     public static void navigateToSignUp(Stage stage, Class classType) {
         navigate(stage, classType, "/view/FXMLSignUp.fxml");    
     }
+    
+    public static void navigateToStatistics(Stage stage, Class classType) {
+        navigate(stage, classType, "/view/FXMLStatistics.fxml");    
+    }
 
     public static void navigateToSignUp(Stage stage, Class classType, Player player) {
         try {
