@@ -8,6 +8,7 @@ package nav;
 import controller.FXMLHomeController;
 import controller.FXMLSignInController;
 import controller.FXMLSignUpController;
+import nav.Navigation;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,7 +30,8 @@ public class Navigation {
             Parent root = FXMLLoader.load(classType.getResource(res));
         
             Scene scene = new Scene(root);
-//            scene.getStylesheets().add(scene.getClass().getResource("styleB.css").toExternalForm()); 
+//            Class<String extends Navigation> styleB = this.getClass().getResource("/view/styleB.css").toExternalForm();
+//            scene.getStylesheets().add(styleB); 
             stage.setScene(scene);
             stage.show();
         } catch(IOException err) {
