@@ -32,7 +32,7 @@ public class ApplicationState {
     
     private String forgotPassNickName;
     
-    private boolean blackStyle;
+    private boolean shouldEditFirstPlayer = true;
     
     private LocalDate startDate;
     private LocalDate endDate;
@@ -139,13 +139,12 @@ public class ApplicationState {
     public void setPlayerToShowHistory(String playerToShowHistory) {
         this.playerToShowHistory = playerToShowHistory;
     }
-    
-    
-    public boolean getStyle() {
-        return blackStyle;
+
+    public boolean isShouldEditFirstPlayer() {
+        return shouldEditFirstPlayer;
     }
-    
-    public void setStyle(boolean s) {
-        blackStyle = s;
+
+    public void setShouldEditFirstPlayer(boolean shouldEditFirstPlayer) {
+        this.shouldEditFirstPlayer = shouldEditFirstPlayer;
     }
 }

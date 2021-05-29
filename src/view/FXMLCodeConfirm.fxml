@@ -22,7 +22,7 @@
                   <TextField fx:id="TFCode" prefWidth="400.0" />
                </children>
             </VBox>
-            <Button fx:id="BSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#validateCode" prefWidth="400.0" text="Ver contrasena" textAlignment="CENTER">
+            <Button fx:id="BSignIn" alignment="CENTER" mnemonicParsing="false" onAction="#validateCode" prefWidth="400.0" styleClass="big" text="Ver contrasena" textAlignment="CENTER">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>

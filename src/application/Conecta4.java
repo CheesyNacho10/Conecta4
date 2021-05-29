@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import static nav.Navigation.isDark;
 
 /**
  *
@@ -22,8 +23,14 @@ public class Conecta4 extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/view/FXMLSignIn.fxml"));
         
         Scene scene = new Scene(root);
+       
+        String style = "/view/style.css";
+        String styleB = this.getClass().getResource(style).toExternalForm();
+        scene.getStylesheets().add(styleB); 
+        
         stage.setTitle("Conecta 4");
         stage.setScene(scene);
+        
         stage.show();
     }
 

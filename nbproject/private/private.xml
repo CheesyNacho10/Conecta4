@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Nacho/Desktop/Conecta4/src/credentials/ApplicationState.java</file>
-            <file>file:/C:/Users/Nacho/Desktop/Conecta4/src/nav/Navigation.java</file>
-            <file>file:/C:/Users/Nacho/Desktop/Conecta4/src/controller/FXMLBaseController.java</file>
-=======
             <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/credentials/ApplicationState.java</file>
+            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLStatisticsController.java</file>
+            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/nav/Navigation.java</file>
+            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLHomeController.java</file>
+            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/controller/FXMLHistoryController.java</file>
+            <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/view/FXMLHome.fxml</file>
             <file>file:/C:/Users/44puk/OneDrive/Documents/NetBeansProjects/Conecta4/src/application/Conecta4.java</file>
->>>>>>> 72989e162ba30791f46e6940ce48ab21fc8bdd3a
         </group>
     </open-files>
 </project-private>

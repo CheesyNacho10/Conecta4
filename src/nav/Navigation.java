@@ -21,6 +21,9 @@ import model.Player;
  * @author 44puk
  */
 public class Navigation {
+    
+    public static boolean isDark = false;
+    
     /**
      * Root method
     */
@@ -28,10 +31,17 @@ public class Navigation {
         try {
             // Reoslución no variable
             Parent root = FXMLLoader.load(classType.getResource(res));
-        
-            Scene scene = new Scene(root);
-//            Class<String extends Navigation> styleB = this.getClass().getResource("/view/styleB.css").toExternalForm();
-//            scene.getStylesheets().add(styleB); 
+            
+            double h = stage.getHeight();
+            double w = stage.getWidth();
+            
+            Scene scene = new Scene(root, w, h);
+            String style = isDark ? "/view/styleB.css" : "/view/style.css";
+            String styleB = classType.getResource(style).toExternalForm();
+            System.out.println("style: " + styleB);
+            scene.getStylesheets().clear();
+            scene.getStylesheets().add(styleB); 
+            
             stage.setScene(scene);
             stage.show();
         } catch(IOException err) {
@@ -89,22 +99,5 @@ public class Navigation {
     
     public static void navigateToStatistics(Stage stage, Class classType) {
         navigate(stage, classType, "/view/FXMLStatistics.fxml");    
-    }
-
-    public static void navigateToSignUp(Stage stage, Class classType, Player player) {
-        try {
-            FXMLLoader loader = new FXMLLoader(classType.getResource("/view/FXMLSignUp.fxml"));
-            Parent root = loader.load();
-            
-            FXMLSignUpController controller = loader.getController();
-            controller.setPlayer(player);
-            controller.initEdit();
-            
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch(IOException err) {
-            System.out.println(err);
-        }
     }
 }

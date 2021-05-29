@@ -22,7 +22,7 @@
                   <TextField fx:id="TFUsername" prefWidth="400.0" />
                </children>
             </VBox>
-            <Button fx:id="BSendPass" mnemonicParsing="false" onAction="#recoverPassword" prefWidth="400.0" text="Enviar correo">
+            <Button fx:id="BSendPass" mnemonicParsing="false" onAction="#recoverPassword" prefWidth="400.0" styleClass="big" text="Enviar correo">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>

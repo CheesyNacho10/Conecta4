@@ -131,7 +131,7 @@ public class FXMLStatisticsController extends FXMLBaseController {
 
     private void initData() {
         TreeMap<LocalDate, Integer> map = db.getRoundCountsPerDay();
-        Map<LocalDate, Integer> selection = map.subMap(applicationState.getStartDate(), applicationState.getEndDate());
+        Map<LocalDate, Integer> selection = map.subMap(applicationState.getStartDate(), true, applicationState.getEndDate(), true);
         
         List<XYChart.Data<String, Number>> list = new ArrayList();
         

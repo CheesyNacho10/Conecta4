@@ -114,6 +114,13 @@ public class FXMLHomeController extends FXMLBaseController {
         showDatePickerDialog();
         Navigation.navigateToStatistics((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
     }
+    
+    @FXML
+    private void toggleStyle() {
+        Navigation.isDark = !Navigation.isDark;
+      
+        Navigation.navigateToHome((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
+    }
    
     private void initSecondPlayer() {
         Player secondPlayer = applicationState.getSecondPlayer();
@@ -150,12 +157,14 @@ public class FXMLHomeController extends FXMLBaseController {
 
     @FXML
     private void firstPlayerEdit(ActionEvent event) {
-        Navigation.navigateToSignUp((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass(), applicationState.getFirstPlayer());
+        applicationState.setShouldEditFirstPlayer(true);
+        Navigation.navigateToSignUp((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
     }
 
     @FXML
     private void secondPlayerEdit(ActionEvent event) {
-        Navigation.navigateToSignUp((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass(), applicationState.getSecondPlayer());
+        applicationState.setShouldEditFirstPlayer(false);
+        Navigation.navigateToSignUp((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
     }
     
     private void showDatePickerDialog() {

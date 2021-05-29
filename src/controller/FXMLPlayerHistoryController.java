@@ -53,20 +53,26 @@ public class FXMLPlayerHistoryController extends FXMLBaseController {
     
     @FXML
     private void showAllGames() {
+        setListData(Collections.EMPTY_LIST);
         List<Round> rounds = db.getRoundsPlayer(player);
-        setListData(rounds);
+        rounds = filterDates(rounds);
+        if(rounds != null) setListData(rounds);
     }
     
     @FXML
     private void showLostGames() {
+        setListData(Collections.EMPTY_LIST);
         List<Round> rounds = db.getLostRoundsPlayer(player);
-        setListData(rounds);
+        rounds = filterDates(rounds);
+        if(rounds != null) setListData(rounds);
     }
     
     @FXML
     private void showWonGames() {
+        setListData(Collections.EMPTY_LIST);
         List<Round> rounds = db.getWinnedRoundsPlayer(player);
-        setListData(rounds);
+        rounds = filterDates(rounds);
+        if(rounds != null) setListData(rounds);
     }
     
     private void initListCellFactory() {
@@ -86,4 +92,33 @@ public class FXMLPlayerHistoryController extends FXMLBaseController {
         gamesListView.setItems(observableList);
     }
     
+    
+    private List<Round> filterDates(List<Round> rounds) {
+        Round start = null;
+        Round end = null;
+        
+        for (Round round : rounds) {
+            
+            if(start == null && (round.getLocalDate().compareTo(applicationState.getStartDate()) >= 0)) {
+               
+                start = round;
+            }
+            
+            if(round.getLocalDate().compareTo(applicationState.getEndDate()) >= 1) {
+               
+                end = round;
+            }
+        }
+        
+        if(start != null) {
+            
+            if(end != null) {
+                return rounds.subList(rounds.indexOf(start), rounds.indexOf(end));
+            
+            } else {
+                return rounds.subList(rounds.indexOf(start), rounds.size());
+            }
+        }
+        return null;
+    }
 }

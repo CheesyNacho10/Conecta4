@@ -24,7 +24,7 @@
                   </Text>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" onAction="#navigateToIni" prefWidth="400.0" text="Volver a inicial">
+            <Button mnemonicParsing="false" onAction="#navigateToIni" prefWidth="400.0" styleClass="big" text="Volver a inicial">
                <font>
                   <Font name="Comic Sans MS" size="24.0" />
                </font>

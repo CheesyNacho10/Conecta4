@@ -11,7 +11,10 @@ import java.awt.Paint;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
 import java.util.logging.Level;
@@ -138,9 +141,11 @@ public class FXMLGameController extends FXMLBaseController{
                 return true;
             case PLAYER_ONE_VICTORY:
                 message = "¡" + applicationState.getFirstPlayer().getNickName() + " ha ganado!";
+                registerVictory(true);
                 break;
             case PLAYER_TWO_VICTORY:
                 message = "¡" + (applicationState.getSecondPlayer() != null ? applicationState.getSecondPlayer().getNickName() : "máquina") + " ha ganado!";
+                registerVictory(false);
                 break;
             case DRAW:
                 message = "¡Empate!";
@@ -228,6 +233,27 @@ public class FXMLGameController extends FXMLBaseController{
         } else {
           return false;  
         }
+    }
+
+    private void registerVictory(boolean isPlayerOneWinner) {
+        boolean isPlayingWithAI = applicationState.getSecondPlayer() == null;
+        
+        int pointsToAdd = isPlayingWithAI ? db.getPointsAlone() : db.getPointsRound();
+        
+        try{
+            if(isPlayerOneWinner) {
+                applicationState.getFirstPlayer().plusPoints(pointsToAdd);
+            
+                if(!isPlayingWithAI) db.regiterRound(LocalDateTime.now(), applicationState.getFirstPlayer(), applicationState.getSecondPlayer());
+            } else {
+                applicationState.getSecondPlayer().plusPoints(pointsToAdd);
+            
+                if(!isPlayingWithAI) db.regiterRound(LocalDateTime.now(), applicationState.getSecondPlayer(), applicationState.getFirstPlayer());
+            }
+            
+            
+        } catch(Exception e) {}
+           
     }
     
     

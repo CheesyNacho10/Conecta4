@@ -29,7 +29,7 @@ public class FXMLResetPassController extends FXMLBaseController {
     
     @FXML
     private void navigateToIni() {
-        Navigation.navigateToIni((Stage) TPass.getScene().getWindow(), getClass());
+        Navigation.navigateToSignIn((Stage) TPass.getScene().getWindow(), getClass());
     }
     
     private void setText() {

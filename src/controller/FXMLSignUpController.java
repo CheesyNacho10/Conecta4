@@ -84,7 +84,13 @@ public class FXMLSignUpController extends FXMLBaseController {
      */
     @Override
     public void init() {
-        // TODO
+        if(applicationState.isShouldEditFirstPlayer()) {
+            if(applicationState.getFirstPlayer() != null) player =  applicationState.getFirstPlayer();
+        } else {
+            if(applicationState.getSecondPlayer() != null) player =  applicationState.getSecondPlayer();
+        }
+        
+        initEdit();
     }    
 
     @FXML
@@ -222,7 +228,8 @@ public class FXMLSignUpController extends FXMLBaseController {
             output.getButtonTypes().setAll(new ButtonType("¡Perfecto!", ButtonBar.ButtonData.OK_DONE));
             
             DialogPane dialogP = output.getDialogPane();
-            dialogP.getStylesheets().add(getClass().getResource("/view/style.css").toExternalForm());
+            String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+            dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
             
             output.showAndWait();
             
