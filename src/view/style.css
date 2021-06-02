@@ -115,6 +115,29 @@ Button.relevant {
     -fx-background-color: eBeige;
 }
 
+.dialog-pane {
+    -fx-border-color: lBlue;
+    -fx-font-family: "dubai bold";
+}
+
+.dialog-pane:header .header-panel {
+  -fx-background-color: lBlue;
+}
+
+.dialog-pane > .content.label {
+   -fx-background-color: dBlue;
+   -fx-text-fill: eBeige;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-background-color: dBlue;
+}
+
+.dialog-pane .button{
+   -fx-background-color: eGreen;
+   -fx-wrap-text: true;
+ }
+
 .list-view .scroll-bar:vertical .track {
     -fx-background-color: dBlue;
     -fx-border-color: dBlue;
@@ -170,4 +193,8 @@ Button.relevant {
 .list-cell:filled:hover {
     -fx-background-color: #0093ff;
     -fx-text-fill: white;
+}
+
+.chart-plot-background {
+    -fx-background-color: nBlue;
 }

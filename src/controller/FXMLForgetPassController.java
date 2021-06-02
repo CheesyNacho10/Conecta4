@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -60,6 +61,11 @@ public class FXMLForgetPassController extends FXMLBaseController {
         dialog.setTitle("Email");
         dialog.setHeaderText("Correo electrónico ha sido mandado");
         dialog.setContentText("Tu código es 111");
+        
+        DialogPane dialogP = dialog.getDialogPane();
+        String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+        dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
+        
         dialog.showAndWait();
     }
     

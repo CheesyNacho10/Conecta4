@@ -25,6 +25,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -221,6 +222,10 @@ public class FXMLGameController extends FXMLBaseController{
         ButtonType goHomeButton = new ButtonType("Volver a menú");
         ButtonType newGameButton = new ButtonType("Jugar de nuevo");
         dialog.getButtonTypes().setAll(goHomeButton, newGameButton);
+        
+        DialogPane dialogP = dialog.getDialogPane();
+        String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+        dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
         
         Optional<ButtonType> result = dialog.showAndWait();
         

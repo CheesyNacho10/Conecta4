@@ -96,7 +96,7 @@ public class FXMLSignUpController extends FXMLBaseController {
     @FXML
     private void navigateToHome(ActionEvent event) {
         // TBI Back home if there is player logged in
-        if (player == null) {
+        if (player == null && applicationState.getFirstPlayer() == null) {
             Navigation.navigateToSignIn((Stage) BSignUp.getScene().getWindow(), getClass());
         }
         else {
@@ -194,7 +194,8 @@ public class FXMLSignUpController extends FXMLBaseController {
             output.getButtonTypes().setAll(new ButtonType("¡Perfecto!", ButtonBar.ButtonData.OK_DONE));
             
             DialogPane dialogP = output.getDialogPane();
-            dialogP.getStylesheets().add(getClass().getResource("/view/style.css").toExternalForm());
+            String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+            dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
             
             output.showAndWait();
             
@@ -210,7 +211,8 @@ public class FXMLSignUpController extends FXMLBaseController {
             output.getButtonTypes().setAll(new ButtonType("Volver", ButtonBar.ButtonData.OK_DONE));
             
             DialogPane dialogP = output.getDialogPane();
-            dialogP.getStylesheets().add(getClass().getResource("/view/style.css").toExternalForm());
+            String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+            dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
             
             output.showAndWait();
         }
@@ -245,7 +247,8 @@ public class FXMLSignUpController extends FXMLBaseController {
             output.getButtonTypes().setAll(new ButtonType("Volver", ButtonBar.ButtonData.OK_DONE));
             
             DialogPane dialogP = output.getDialogPane();
-            dialogP.getStylesheets().add(getClass().getResource("/view/style.css").toExternalForm());
+            String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+            dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
             
             output.showAndWait();
         }
