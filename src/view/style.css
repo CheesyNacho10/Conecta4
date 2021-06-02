@@ -194,7 +194,3 @@ Button.relevant {
     -fx-background-color: #0093ff;
     -fx-text-fill: white;
 }
-
-.chart-plot-background {
-    -fx-background-color: nBlue;
-}

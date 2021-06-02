@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -199,7 +200,11 @@ public class FXMLHomeController extends FXMLBaseController {
             }
             return null;
         });
-
+        
+        DialogPane dialogP = dialog.getDialogPane();
+        String style = Navigation.isDark ? "/view/styleB.css" : "/view/style.css";
+        dialogP.getStylesheets().add(getClass().getResource(style).toExternalForm());
+        
         Optional<Pair<LocalDate, LocalDate>> result = dialog.showAndWait();
 
         result.ifPresent(startAndEndDates -> {
