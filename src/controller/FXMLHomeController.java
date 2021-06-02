@@ -119,7 +119,6 @@ public class FXMLHomeController extends FXMLBaseController {
     @FXML
     private void toggleStyle() {
         Navigation.isDark = !Navigation.isDark;
-      
         Navigation.navigateToHome((Stage) IVFirstPlayerAvatar.getScene().getWindow(), getClass());
     }
    

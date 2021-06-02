@@ -72,6 +72,12 @@ public class FXMLSignInController extends FXMLBaseController {
         
     }
     
+    @FXML
+    private void toggleStyle() {
+        Navigation.isDark = !Navigation.isDark;
+        Navigation.navigateToSignIn((Stage) BSignIn.getScene().getWindow(), getClass());
+    }
+    
     private void navigateHome(){
         Navigation.navigateToHome((Stage) BSignIn.getScene().getWindow(), getClass());
     }
