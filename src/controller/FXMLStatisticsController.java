@@ -20,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -46,14 +47,21 @@ import nav.Navigation;
 public class FXMLStatisticsController extends FXMLBaseController {
     
     @FXML
+    private BarChart<String, Number> barChart;
+    
+    @FXML
     private LineChart<String, Number> lineChart;
+    
     @FXML
     private Button clearButton;
         
         
     @Override
     void init() {
+        barChart.managedProperty().bind(barChart.visibleProperty());
+        lineChart.managedProperty().bind(lineChart.visibleProperty());
         initData();
+        
     }
 
     @FXML
@@ -148,6 +156,9 @@ public class FXMLStatisticsController extends FXMLBaseController {
         lineChart.setTitle("Todas las partidas");
         lineChart.getData().add(serie);
         
+        lineChart.setVisible(true);
+        barChart.setVisible(false);
+        
     }
     
     private void showPlayerPickerDialog() {
@@ -215,11 +226,13 @@ public class FXMLStatisticsController extends FXMLBaseController {
         
         List<XYChart.Data<String, Number>> winned = new ArrayList();
         List<XYChart.Data<String, Number>> lost = new ArrayList();
+        List<XYChart.Data<String, Number>> oponents = new ArrayList();
         
         for(Entry<LocalDate, DayRank> entry : selection.entrySet()) {
             
             winned.add(new XYChart.Data(entry.getKey().toString(), entry.getValue().getWinnedGames()));
             lost.add(new XYChart.Data(entry.getKey().toString(), entry.getValue().getLostGames()));
+            oponents.add(new XYChart.Data(entry.getKey().toString(), entry.getValue().getOponents()));
         }
         
         XYChart.Series serieW = new XYChart.Series(FXCollections.observableArrayList(winned));
@@ -230,10 +243,18 @@ public class FXMLStatisticsController extends FXMLBaseController {
         
         serieL.setName("Perdidas");
         
-        lineChart.getData().clear();
-        lineChart.setTitle("Todas las partidas");
-        lineChart.getData().add(serieW);
-        lineChart.getData().add(serieL);
+        XYChart.Series serieOp = new XYChart.Series(FXCollections.observableArrayList(oponents));
+        
+        serieOp.setName("Oponentes");
+        
+        barChart.getData().clear();
+        barChart.setTitle("Todas las partidas");
+        barChart.getData().add(serieW);
+        barChart.getData().add(serieL);
+        barChart.getData().add(serieOp);
+        
+        barChart.setVisible(true);
+        lineChart.setVisible(false);
     }
     
 }

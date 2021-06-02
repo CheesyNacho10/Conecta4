@@ -35,7 +35,7 @@ public class Navigation {
             double h = stage.getHeight();
             double w = stage.getWidth();
             
-            Scene scene = new Scene(root, w, h);
+            Scene scene = new Scene(root, w - 18, h - 32);
             String style = isDark ? "/view/styleB.css" : "/view/style.css";
             String styleB = classType.getResource(style).toExternalForm();
             System.out.println("style: " + styleB);
